@@ -77,8 +77,8 @@ configure() {
   find lib -type d -maxdepth 1 -mindepth 1 -exec rm -rf {} \;
   find bin -type f -not \( -name '*mysqld' -or -name '*mysqldump' -or -name '*mysql_ssl_rsa_setup' -or -name '*mysql'  -or -name '*mysqladmin' \) -delete
   
-  bin/mysqld --initialize-insecure  --datadir=data
-  bin/mysql_ssl_rsa_setup --datadir=data
+  bin/mysqld --initialize-insecure --basedir=`pwd` --datadir=`pwd`/data
+  bin/mysql_ssl_rsa_setup --datadir=`pwd`/data
 }
 # ------------------------------------------------------------
 
