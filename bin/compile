@@ -39,7 +39,7 @@ download_and_unpack() {
 #  curl -# -L -o "$TMP_DIR/$VERSION.tar.xz" "https://dev.mysql.com/get/Downloads/MySQL-8.0/$VERSION.tar.xz"
   curl -# -L -o "$TMP_DIR/$VERSION.tar.gz" "https://dev.mysql.com/get/Downloads/MySQL-5.7/$VERSION.tar.gz"
   echo '       * Unpacking'
-  tar -C "$CACHE_DIR" -xJf "$TMP_DIR/$VERSION.tar.gz"
+  tar -C "$CACHE_DIR" -xfv "$TMP_DIR/$VERSION.tar.gz"
   cp "$BP_DIR"/lib/lib*.so* "$CACHE_DIR/$VERSION/lib"  
 }
 # ------------------------------------------------------------
